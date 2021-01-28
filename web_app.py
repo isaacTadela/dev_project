@@ -1,5 +1,8 @@
 from flask import Flask, request
 from db_connector import insert, select, update, delete
+import os
+import signal
+
 
 app = Flask(__name__)
 
@@ -12,5 +15,10 @@ def user(user_id):
     except Exception as e:
         print(e)
         return "<H1 id='error'>no such user: "+ user_id + "</H1>"
+
+@app.route('/stop_server')
+def stop_server():
+    os.kill(os.getpid(), signal.CTRL_C_EVENT)
+    return 'Server stopped'
 
 app.run(host='127.0.0.1', debug=True, port=5001)

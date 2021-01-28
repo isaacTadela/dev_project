@@ -17,9 +17,9 @@ def insert(user_id, user_name):
         cursor.close()
         conn.close()
         return True
-
     except Exception as e:
-        return False
+        print(e)
+        raise Exception
 
 def select(user_id):
     try:
@@ -38,7 +38,8 @@ def select(user_id):
         conn.close()
         return user_name
     except Exception as e:
-        return False
+        print(e)
+        raise Exception
 
 def update(user_id, user_name):
     try:
@@ -55,7 +56,8 @@ def update(user_id, user_name):
         conn.close()
         return user_name
     except Exception as e:
-        return False
+        print(e)
+        raise Exception
 
 def delete(user_id):
     try:
@@ -72,7 +74,8 @@ def delete(user_id):
         conn.close()
         return user_id
     except Exception as e:
-        return False
+        print(e)
+        raise Exception
 
 
 #cursor.close()
