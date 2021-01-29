@@ -6,21 +6,27 @@ stages {
             git 'clone https://github.com/isaacTadela/dev_project'
         }
     }
-    stage('run servers') {
+    stage('rest app') {
         steps {
             bat 'start /min python rest_app.py'
         }
+    }
+    stage('web app') {
         steps {
             bat 'start /min python web_app.py'
         }
     }
-    stage('_testing') {
+    stage('testing backend') {
         steps {
             bat 'start /min python backend_testing.py'
         }
+    }
+    stage('testing frontend') {
         steps {
             bat 'start /min python frontend_testing.py'
         }
+    }
+    stage('combined testing') {
         steps {
             bat 'start /min python combined_testing.py'
         }
@@ -50,11 +56,3 @@ stages {
         }
     }
 }
-
-// Pull code from your Github repository holding your previous project (part 1).
-// 2. Run rest_app.py (backend)
-// 3. Run web_app.py (frontend)
-// 4. Run backend_testing.py
-// 5. Run frontend_testing.py
-// 6. Run combined_testing.py
-// 7. Run clean_environemnt.py
