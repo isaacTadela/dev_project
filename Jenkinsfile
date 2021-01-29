@@ -25,6 +25,11 @@ stages {
             bat 'start /min python combined_testing.py'
         }
     }
+    stage('clean environemnt') {
+        steps {
+            bat 'start /min python clean_environemnt.py'
+        }
+    }
  }
  post {
         always {
