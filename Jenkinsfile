@@ -33,13 +33,14 @@ stages {
     }
     stage('clean environemnt') {
         steps {
-            bat 'py clean_environemnt.py'
+            bat 'py clean_environment.py'
         }
     }
  }
  post {
         always {
             echo 'One way or another, I have finished'
+            cleanWs()
         }
         success {
             echo 'I succeeded!'
