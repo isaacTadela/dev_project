@@ -13,12 +13,12 @@ stages {
     }
     stage('rest app') {
         steps {
-            bat 'python rest_app.py'
+            bat 'start /min python rest_app.py'
         }
     }
     stage('web app') {
         steps {
-            bat 'python web_app.py'
+            bat 'start /min python web_app.py'
         }
     }
     stage('testing backend') {
