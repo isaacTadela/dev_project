@@ -18,22 +18,22 @@ stages {
     }
     stage('testing backend') {
         steps {
-            bat 'py backend_testing.py'
+            bat 'python backend_testing.py'
         }
     }
     stage('testing frontend') {
         steps {
-            bat 'py frontend_testing.py'
+            bat 'python frontend_testing.py'
         }
     }
     stage('combined testing') {
         steps {
-            bat 'py combined_testing.py'
+            bat 'python combined_testing.py'
         }
     }
     stage('clean environemnt') {
         steps {
-            bat 'py clean_environment.py'
+            bat 'python clean_environment.py'
         }
     }
  }
