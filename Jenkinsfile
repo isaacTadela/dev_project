@@ -8,7 +8,7 @@ stages {
     }
     stage('Install requirements') {
         steps {
-            bat 'pip install -r requirements/test.txt'
+            bat 'pip install -r requirements.txt'
         }
     }
     stage('rest app') {
