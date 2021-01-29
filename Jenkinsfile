@@ -45,7 +45,7 @@ stages {
  post {
         always {
             echo 'One way or another, I have finished'
-            cleanWs()
+            deleteDir() /* clean up our workspace */
         }
         success {
             echo 'I succeeded!'
