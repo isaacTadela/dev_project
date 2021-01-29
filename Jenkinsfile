@@ -18,29 +18,28 @@ stages {
     }
     stage('testing backend') {
         steps {
-            bat 'start /min python backend_testing.py'
+            bat 'py backend_testing.py'
         }
     }
     stage('testing frontend') {
         steps {
-            bat 'start /min python frontend_testing.py'
+            bat 'py frontend_testing.py'
         }
     }
     stage('combined testing') {
         steps {
-            bat 'start /min python combined_testing.py'
+            bat 'py combined_testing.py'
         }
     }
     stage('clean environemnt') {
         steps {
-            bat 'start /min python clean_environemnt.py'
+            bat 'py clean_environemnt.py'
         }
     }
  }
  post {
         always {
             echo 'One way or another, I have finished'
-            
         }
         success {
             echo 'I succeeded!'
