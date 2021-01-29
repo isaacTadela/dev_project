@@ -31,7 +31,7 @@ stages {
             bat 'python combined_testing.py'
         }
     }
-    stage('clean environemnt') {
+    stage('clean environment') {
         steps {
             bat 'python clean_environment.py'
         }
