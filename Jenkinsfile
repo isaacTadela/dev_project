@@ -3,7 +3,7 @@ agent any
 stages {
     stage('pull from git') {
         steps {
-            git 'clone https://github.com/isaacTadela/dev_project'
+            bat 'git clone https://github.com/isaacTadela/dev_project'
         }
     }
     stage('rest app') {
