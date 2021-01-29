@@ -6,6 +6,11 @@ stages {
             bat 'git clone https://github.com/isaacTadela/dev_project'
         }
     }
+    stage('Install requirements') {
+        steps {
+            bat 'pip install -r requirements/test.txt'
+        }
+    }
     stage('rest app') {
         steps {
             bat 'start /min python rest_app.py'
