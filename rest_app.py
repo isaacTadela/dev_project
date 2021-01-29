@@ -3,6 +3,7 @@ from db_connector import insert, select, update, delete
 import os
 import signal
 
+
 app = Flask(__name__)
 
 # supported methods
@@ -51,5 +52,6 @@ def user(user_id):
 def stop_server():
     os.kill(os.getpid(), signal.CTRL_C_EVENT)
     return 'Server stopped'
+
 
 app.run(host='127.0.0.1', debug=True, port=5000)
