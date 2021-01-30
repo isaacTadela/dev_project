@@ -45,7 +45,8 @@ stages {
  post {
         always {
             echo 'One way or another, I have finished'
-            deleteDir() /* clean up our workspace */
+            /* deleteDir() clean up our workspace */
+            sh "rm -rf dirName"
         }
         success {
             echo 'I succeeded!'
