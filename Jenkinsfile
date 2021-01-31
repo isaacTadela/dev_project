@@ -34,13 +34,9 @@ stages {
     stage('clean environment') {
         steps {
             bat 'python clean_environment.py'
-        }
-    }
-    stage('clean environment') {
-        steps {
-            bat 'python clean_environment.py'
             deleteDir() /* clean up our workspace */
         }
     }
  }
+
 }
