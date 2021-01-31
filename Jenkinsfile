@@ -1,11 +1,6 @@
 pipeline {
 agent any
 stages {
-    stage('pull from git') {
-        steps {
-            bat 'git clone https://github.com/isaacTadela/dev_project'
-        }
-    }
     stage('Install requirements') {
         steps {
             bat 'pip install -r requirements.txt'
