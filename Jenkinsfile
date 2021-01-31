@@ -43,11 +43,6 @@ stages {
     }
  }
  post {
-        always {
-            echo 'One way or another, I have finished'
-            /* deleteDir() /* clean up our workspace */
-            cleanWs()
-        }
         success {
             echo 'I succeeded!'
         }
@@ -59,6 +54,11 @@ stages {
         }
         changed {
             echo 'Things were different before...'
+        }
+        always {
+            echo 'One way or another, I have finished'
+            /* deleteDir() /* clean up our workspace */
+            cleanWs()
         }
     }
 }
