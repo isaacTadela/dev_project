@@ -42,15 +42,6 @@ stages {
             echo 'One way or another, I have finished'
             deleteDir() /* clean up our workspace */
         }
-        success {
-            echo 'I succeeded!'
-        }
-        failure {
-            echo 'I failed :('
 
-            mail to: 'iitzhakk@gmail.com',
-                 subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-                 body: "Something is wrong with ${env.BUILD_URL}"
-        }
     }
 }
