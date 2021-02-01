@@ -36,16 +36,11 @@ stages {
             bat 'python combined_testing.py'
         }
     }
-    stage('clean environment') {
-        steps {
-            bat 'python clean_environment.py'
-        }
-    }
  }
  post {
         always {
             echo 'One way or another, I have finished'
-            /* deleteDir() /* clean up our workspace */
+            deleteDir() /* clean up our workspace */
             /* cleanWs() */
         }
         success {
