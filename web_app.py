@@ -13,12 +13,12 @@ def user(user_id):
         return "<H1 id='user'>" + user_name + "</H1>"
     except Exception as e:
         print(e)
-        return "<H1 id='error'>no such user: "+ user_id + "</H1>"
+        return "<H1 id='error'>no such user: " + user_id + "</H1>"
 
 @app.route('/stop_server')
 def stop_server():
     os.kill(os.getpid(), signal.CTRL_C_EVENT)
-    return 'Server stopped'
+    return {'status': 'ok', 'reason': 'Server stopped'}, 200  # status code
 
-
-app.run(host='127.0.0.1', debug=True, port=5001)
+if __name__ == '__main__':
+    app.run(host='127.0.0.1', debug=True, port=5001, threaded=True)

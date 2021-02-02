@@ -51,7 +51,7 @@ def user(user_id):
 @app.route('/stop_server')
 def stop_server():
     os.kill(os.getpid(), signal.CTRL_C_EVENT)
-    return 'Server stopped'
+    return {'status': 'ok', 'reason': 'Server stopped'}, 200  # status code
 
-
-app.run(host='127.0.0.1', debug=True, port=5000)
+if __name__ == '__main__':
+    app.run(host='127.0.0.1', debug=True, port=5000, threaded=True)
