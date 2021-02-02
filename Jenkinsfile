@@ -37,5 +37,17 @@ stages {
         }
     }
  }
- 
+ post {
+        success {
+            echo 'I succeeded!'
+        }
+        failure {
+            echo 'I failed :('
+        }
+        always {
+            echo 'One way or another, I have finished'
+            deleteDir() /* clean up our workspace */
+            /* cleanWs() /* clean up our workspace */
+        }
+    }
 }
