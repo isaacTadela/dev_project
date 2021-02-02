@@ -46,7 +46,7 @@ stages {
         }
         always {
             echo 'One way or another, I have finished'
-            deleteDir() /* clean up our workspace */
+            /* deleteDir() /* clean up our workspace */
             /* cleanWs() /* clean up our workspace */
         }
     }
